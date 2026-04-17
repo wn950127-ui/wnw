@@ -22,7 +22,7 @@ export function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
   const links = [
     { name: "首页", path: "/" },
     { name: "作品", path: "/photography" },
-    { name: "工作经验", path: "/about" },
+    { name: "经验", path: "/about" },
   ];
 
   return (

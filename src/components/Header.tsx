@@ -46,13 +46,6 @@ export function Header() {
               <Search className="h-5 w-5" />
               <span className="sr-only">Search</span>
             </button>
-            <Link 
-              to="/about" 
-              className="hidden text-sm font-medium uppercase tracking-wider text-ink-light hover:text-ink sm:block transition-colors"
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            >
-              工作经验
-            </Link>
           </div>
         </div>
       </motion.header>

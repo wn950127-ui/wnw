@@ -8,7 +8,7 @@ export function BottomNav() {
   const navItems = [
     { path: "/", icon: Home, label: "首页" },
     { path: "/photography", icon: ImageIcon, label: "作品" },
-    { path: "/about", icon: User, label: "经历" },
+    { path: "/about", icon: User, label: "经验" },
   ];
 
   return (
