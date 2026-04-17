@@ -8,11 +8,14 @@ export function BottomNav() {
   const navItems = [
     { path: "/", icon: Home, label: "首页" },
     { path: "/photography", icon: ImageIcon, label: "作品" },
-    { path: "/about", icon: User, label: "关于" },
+    { path: "/about", icon: User, label: "经历" },
   ];
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 apple-nav border-t sm:hidden pb-[env(safe-area-inset-bottom)]">
+    <div 
+      className="fixed bottom-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-2xl saturate-150 border-t border-black/[0.04] sm:hidden pb-[env(safe-area-inset-bottom)]"
+      style={{ WebkitBackdropFilter: "blur(20px) saturate(150%)" }}
+    >
       <div className="flex items-center justify-around h-16 px-6">
         {navItems.map((item) => {
           const isActive = location.pathname === item.path;

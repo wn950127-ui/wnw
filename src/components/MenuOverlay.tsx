@@ -22,7 +22,7 @@ export function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
   const links = [
     { name: "首页", path: "/" },
     { name: "作品", path: "/photography" },
-    { name: "关于我", path: "/about" },
+    { name: "工作经验", path: "/about" },
   ];
 
   return (
@@ -33,25 +33,27 @@ export function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.3, ease: "easeOut" }}
             onClick={onClose}
-            className="fixed inset-0 z-[90] bg-ink/20 backdrop-blur-sm"
+            className="fixed inset-0 z-[90] bg-black/20 backdrop-blur-md"
+            style={{ WebkitBackdropFilter: "blur(12px)" }}
           />
           <motion.div
             initial={{ x: "-100%" }}
             animate={{ x: 0 }}
             exit={{ x: "-100%" }}
-            transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-y-0 left-0 z-[100] w-full max-w-sm bg-paper shadow-2xl flex flex-col"
+            transition={{ type: "spring", damping: 25, stiffness: 350 }}
+            className="fixed inset-y-0 left-0 z-[100] w-full max-w-[320px] bg-white/90 backdrop-blur-3xl saturate-150 shadow-[0_0_40px_rgba(0,0,0,0.1)] border-r border-white/50 flex flex-col"
+            style={{ WebkitBackdropFilter: "blur(40px) saturate(150%)" }}
           >
             <div className="flex justify-between items-center p-6 border-b border-ink/5">
-              <span className="font-serif text-lg font-semibold tracking-wide">菜单</span>
+              <span className="font-sans text-base font-semibold tracking-wide text-ink/80">菜单</span>
               <button onClick={onClose} className="p-2 text-ink-light hover:text-ink transition-colors">
-                <X className="h-6 w-6" />
+                <X className="h-5 w-5" />
               </button>
             </div>
             
-            <nav className="flex-1 overflow-y-auto p-8 flex flex-col gap-8 justify-center">
+            <nav className="flex-1 overflow-y-auto p-8 flex flex-col gap-6 justify-center">
               {links.map((link, idx) => (
                 <motion.div
                   key={link.name}
@@ -62,7 +64,7 @@ export function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
                   <Link 
                     to={link.path} 
                     onClick={onClose}
-                    className="font-serif text-4xl text-ink hover:text-accent transition-colors"
+                    className="font-sans text-2xl font-medium text-ink/80 hover:text-accent transition-colors"
                   >
                     {link.name}
                   </Link>
@@ -73,7 +75,6 @@ export function MenuOverlay({ isOpen, onClose }: MenuOverlayProps) {
             <div className="p-8 border-t border-ink/5">
               <div className="flex flex-wrap gap-4 text-sm font-medium tracking-wider text-ink-light">
                 <ContactItem label="微信" value="oovoo0826" />
-                <ContactItem label="QQ" value="1096048146" />
               </div>
             </div>
           </motion.div>
